@@ -1,0 +1,217 @@
+@import "tailwindcss";
+@import "@fontsource-variable/bricolage-grotesque";
+@import "@fontsource-variable/public-sans";
+@import "@fontsource-variable/jetbrains-mono";
+
+/* Design tokens da Tools. Valores definidos na prancha 04 do projeto visual. */
+@theme {
+  --color-paper: #f5f3ee;
+  --color-sand: #ece8e0;
+  --color-card: #fbfaf7;
+  --color-ink: #11161b;
+  --color-ink-soft: #3a434b;
+  --color-muted: #5b656e;
+  --color-line: #d9d4ca;
+  --color-line-strong: #b9b3a7;
+
+  --color-petrol: #0e3b43;
+  --color-petrol-600: #14525c;
+  --color-copper: #a64b17;
+  --color-copper-hover: #8c3e12;
+  --color-copper-light: #e9a06b;
+  --color-copper-light-hover: #f2b88e;
+
+  /* Módulos do logo, em 16% de opacidade sobre Papel. Só decoração. */
+  --color-mod-magenta: #f3cdde;
+  --color-mod-laranja: #f5e1cb;
+  --color-mod-amarelo: #f6edc9;
+  --color-mod-roxo: #e1d4e1;
+  --color-mod-azul: #d9e4ea;
+  --color-mod-grafite: #d2d0cc;
+
+  --color-live-bg: #ddede4;
+  --color-live-text: #1b5a3d;
+  --color-dev-bg: #e3eaf2;
+  --color-dev-text: #25507a;
+  --color-danger: #9a2f1f;
+  --color-danger-bg: #f8e4e0;
+
+  --font-display: "Bricolage Grotesque Variable", "Public Sans Variable", system-ui, sans-serif;
+  --font-body: "Public Sans Variable", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono Variable", ui-monospace, monospace;
+
+  --radius-card: 12px;
+  --shadow-card: 0 1px 2px rgba(17, 22, 27, 0.06), 0 8px 24px rgba(17, 22, 27, 0.06);
+  --ease-soft: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+@layer base {
+  html {
+    scroll-padding-top: 5rem;
+  }
+  body {
+    margin: 0;
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+  :focus-visible {
+    outline: 3px solid var(--color-petrol-600);
+    outline-offset: 3px;
+  }
+  .on-dark :focus-visible {
+    outline-color: var(--color-paper);
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* Escala tipográfica (mobile primeiro). */
+@layer components {
+  .t-display {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    font-size: 40px;
+    line-height: 44px;
+  }
+  .t-h2 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    font-size: 28px;
+    line-height: 34px;
+  }
+  .t-h2-lg {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    font-size: 34px;
+    line-height: 38px;
+  }
+  .t-h3 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 27px;
+  }
+  .t-lead {
+    font-size: 18px;
+    line-height: 28px;
+  }
+  .t-body {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .mono-label {
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  @media (min-width: 768px) {
+    .t-display {
+      font-size: 56px;
+      line-height: 60px;
+    }
+    .t-h2 {
+      font-size: 36px;
+      line-height: 42px;
+    }
+    .t-h2-lg {
+      font-size: 48px;
+      line-height: 52px;
+    }
+    .t-lead {
+      font-size: 19px;
+      line-height: 30px;
+    }
+  }
+  @media (min-width: 1024px) {
+    .t-display {
+      font-size: 72px;
+      line-height: 76px;
+    }
+    .t-h2 {
+      font-size: 40px;
+      line-height: 46px;
+    }
+    .t-h2-lg {
+      font-size: 56px;
+      line-height: 60px;
+    }
+    .t-lead {
+      font-size: 20px;
+      line-height: 32px;
+    }
+    .t-body {
+      font-size: 17px;
+      line-height: 28px;
+    }
+  }
+}
+
+/* Movimento: só existe quando o visitante não pediu menos animação. */
+@media (prefers-reduced-motion: no-preference) {
+  .js .reveal {
+    opacity: 0;
+    transform: translateY(12px);
+    transition:
+      opacity 480ms var(--ease-soft),
+      transform 480ms var(--ease-soft);
+  }
+  .js .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+  .art-block {
+    animation: step-in 480ms var(--ease-soft) both;
+  }
+  .art-line {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: draw-line 700ms var(--ease-soft) 520ms forwards;
+  }
+  .art-dot {
+    animation: fade-in 300ms var(--ease-soft) 900ms both;
+  }
+}
+@keyframes step-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes draw-line {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

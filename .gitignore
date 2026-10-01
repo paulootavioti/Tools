@@ -1,0 +1,16 @@
+node_modules/
+dist/
+.DS_Store
+.env
+.env.*
+*.env
+!.env.example
+*.pem
+*.key
+*.log
+*.tmp
+*.bak
+*.swp
+*.tsbuildinfo
+# Cópia antiga local; não pertence ao site React
+Pasta Sem*/
