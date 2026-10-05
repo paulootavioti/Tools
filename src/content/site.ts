@@ -5,6 +5,8 @@ export type ExternalLink = { label: string; href: string };
  * Itens marcados "confirmar" vieram do site pessoal do Paulo e precisam de conferência.
  */
 export const contact = {
+  /** Lançamento confirmado com atendimento direto; endpoint não ativa o formulário. */
+  mode: "direct" as "direct" | "form",
   /** WhatsApp oficial, confirmado por Paulo; somente dígitos com DDI. */
   whatsappNumber: "5561991768044" as string | null,
   email: "suporte.toolink@gmail.com" as string | null,
@@ -20,7 +22,7 @@ export const contact = {
 };
 
 export const whatsappHref = contact.whatsappNumber
-  ? `https://wa.me/${contact.whatsappNumber}`
+  ? `https://wa.me/${contact.whatsappNumber}?text=${encodeURIComponent("Olá, Paulo! Conheci a Tools e gostaria de conversar sobre uma necessidade do meu negócio.")}`
   : null;
 
 export const site = {

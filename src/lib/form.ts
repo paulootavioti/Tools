@@ -21,6 +21,7 @@ export async function sendDiagnostic(payload: DiagnosticPayload): Promise<void> 
     method: "POST",
     headers: { "Content-Type": "application/json", Accept: "application/json" },
     body: JSON.stringify(payload),
+    signal: AbortSignal.timeout(15000),
   });
   if (!response.ok) {
     throw new Error(`Falha no envio (${response.status}).`);

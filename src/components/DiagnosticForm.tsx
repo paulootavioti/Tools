@@ -1,7 +1,7 @@
 import { useId, useRef, useState, type FormEvent } from "react";
 import { diagnostico } from "../content/formulario-e-rodape";
 import { legal } from "../content/formulario-e-rodape";
-import { contact } from "../content/site";
+import { contact, whatsappHref } from "../content/site";
 import { isValidEmail, sendDiagnostic } from "../lib/form";
 import { Button } from "./ui/Button";
 import { Link } from "react-router-dom";
@@ -61,6 +61,20 @@ export function DiagnosticForm() {
     } catch {
       setStatus("error");
     }
+  }
+
+  if (contact.mode === "direct" || !import.meta.env.VITE_FORM_ENDPOINT?.trim()) {
+    return (
+      <div className="flex flex-col gap-5 rounded-card border border-line bg-card p-5 md:p-7">
+        <h2 className="m-0 font-display text-2xl font-semibold">Comece por uma conversa</h2>
+        <p className="m-0 leading-7 text-ink-soft">Conte qual é o seu negócio, como o processo funciona hoje e o que você gostaria de melhorar. Paulo avalia a necessidade e combina o próximo passo com você.</p>
+        <p className="m-0 text-sm text-ink-soft">A conversa inicial não contrata um serviço. Escopo, prazo e investimento são definidos em proposta antes da execução.</p>
+        {whatsappHref ? <Button href={whatsappHref} arrow large>Conversar no WhatsApp</Button> : null}
+        {contact.email ? <a className="break-all underline underline-offset-2" href={`mailto:${contact.email}`}>{contact.email}</a> : null}
+        <p className="m-0 text-sm text-ink-soft">Envie apenas informações gerais. Não envie senhas, prontuários ou dados pessoais de alunos e clientes.</p>
+        <Link to={legal.privacidade.path} className="text-sm underline underline-offset-2">Como seus dados são tratados</Link>
+      </div>
+    );
   }
 
   if (status === "success") {

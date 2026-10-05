@@ -1,3 +1,4 @@
+import { Perguntas } from "../components/sections/Perguntas";
 import { Case } from "../components/sections/Case";
 import { CtaFinal } from "../components/sections/CtaFinal";
 import { Ecossistema } from "../components/sections/Ecossistema";
@@ -20,6 +21,7 @@ export default function Home() {
       <Ecossistema />
       <Case />
       <Sobre />
+      <Perguntas />
       <CtaFinal />
     </>
   );
