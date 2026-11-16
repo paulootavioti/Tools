@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { site } from "../../content/site";
 import { solucoes } from "../../content/servicos";
 import { Reveal } from "../ui/Reveal";
 import { Section } from "../ui/Section";
@@ -7,6 +6,7 @@ import { SectionHeader } from "../ui/SectionHeader";
 import { tintAt } from "../ui/tint";
 
 export function Solucoes() {
+  const paths = ["/solucoes/desenvolvimento", "/solucoes/automacao", "/projetos", "/solucoes/consultoria", "/solucoes/desenvolvimento", "/solucoes/consultoria"];
   return (
     <Section id="solucoes" labelledBy="h-solucoes" innerClassName="flex flex-col gap-10">
       <Reveal className="max-w-[760px]">
@@ -26,7 +26,7 @@ export function Solucoes() {
                 <h3 className="t-h3 m-0 mt-1 lg:text-2xl lg:leading-[29px]">{item.title}</h3>
                 <p className="m-0 text-[15px] leading-[23px] text-ink-soft">{item.text}</p>
                 <Link
-                  to={site.cta.to}
+                  to={paths[index]}
                   className="mt-auto inline-flex min-h-11 items-center gap-1 text-sm font-semibold text-copper hover:text-copper-hover hover:underline underline-offset-4"
                 >
                   {solucoes.linkLabel}

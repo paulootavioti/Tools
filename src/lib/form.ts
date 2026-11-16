@@ -4,6 +4,8 @@ export type DiagnosticPayload = {
   whatsapp: string;
   empresa: string;
   segmento: string;
+  tamanhoEquipe: string;
+  preferenciaContato: string;
   mensagem: string;
   consentimento: boolean;
 };

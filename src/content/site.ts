@@ -28,23 +28,22 @@ export const whatsappHref = contact.whatsappNumber
 export const site = {
   name: "Tools — Soluções Inteligentes",
   shortName: "Tools",
-  slogan: "Tecnologia para operar. Estratégia para crescer.",
+  slogan: "Tecnologia que organiza, conecta e prepara empresas para crescer.",
   founder: "Paulo Otávio",
   founderRole: "Analista de Sistemas e Negócios",
   year: 2026,
   skipLabel: "Pular para o conteúdo",
   nav: [
-    { label: "Soluções", to: "/#solucoes" },
-    { label: "Produtos", to: "/#produtos" },
-    { label: "Método", to: "/#metodo" },
-    { label: "Sobre", to: "/#sobre" },
-    { label: "Contato", to: "/#contato" },
+    { label: "Soluções", to: "/solucoes" },
+    { label: "Segmentos", to: "/segmentos" },
+    { label: "Projetos", to: "/projetos" },
+    { label: "Como trabalhamos", to: "/#metodo" },
   ],
   seo: {
     home: {
-      title: "Tools — Soluções Inteligentes | Tecnologia para operar. Estratégia para crescer.",
+      title: "Tools | CRM, automação, IA e sistemas sob medida",
       description:
-        "Diagnóstico e soluções digitais sob medida para pequenos negócios, a partir de operações reais. Criada por Paulo Otávio.",
+        "CRM, automações, inteligência artificial e sistemas sob medida para melhorar vendas, atendimento e eficiência operacional.",
     },
     notFound: { title: "Página não encontrada | Tools", description: "A página procurada não existe." },
   },
@@ -52,10 +51,10 @@ export const site = {
   talkCta: { label: "Conversar com Paulo" },
   hero: {
     eyebrow: "Tools — Soluções Inteligentes",
-    title: "Tecnologia para operar. Estratégia para crescer.",
-    text: "Compreendemos sua operação, identificamos o que impede o crescimento e transformamos esse diagnóstico em soluções digitais que funcionam na prática.",
-    secondaryCta: { label: "Conhecer soluções", to: "/#solucoes" },
-    note: "Criada por Paulo Otávio, Analista de Sistemas e Negócios, a partir de operações reais.",
+    title: "Sua empresa mais organizada, conectada e preparada para crescer.",
+    text: "Implementamos CRM, automações, inteligência artificial e sistemas sob medida para melhorar vendas, atendimento e eficiência operacional.",
+    secondaryCta: { label: "Conhecer nossas soluções", to: "/solucoes" },
+    note: "Diagnóstico, implantação, treinamento e evolução contínua — com proximidade e clareza em cada etapa.",
   },
   ctaFinal: {
     title: "Qual processo do seu negócio precisa funcionar melhor?",

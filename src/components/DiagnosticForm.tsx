@@ -54,6 +54,8 @@ export function DiagnosticForm() {
         empresa: text("empresa"),
         segmento: text("segmento"),
         mensagem: text("mensagem"),
+        tamanhoEquipe: text("tamanhoEquipe"),
+        preferenciaContato: text("preferenciaContato"),
         consentimento: true,
       });
       form.reset();
@@ -165,6 +167,21 @@ export function DiagnosticForm() {
             </option>
           ))}
         </select>
+      </div>
+
+      <div className="grid gap-4 md:grid-cols-2">
+        <div className="flex flex-col gap-1.5">
+          <label htmlFor={id("tamanhoEquipe")} className="text-sm font-semibold">{f.teamSize}</label>
+          <select id={id("tamanhoEquipe")} name="tamanhoEquipe" className={`${fieldBase} ${fieldOk}`}>
+            <option value="">Selecione uma opção</option>{diagnostico.teamSizes.map((value) => <option key={value}>{value}</option>)}
+          </select>
+        </div>
+        <div className="flex flex-col gap-1.5">
+          <label htmlFor={id("preferenciaContato")} className="text-sm font-semibold">{f.contactPreference}</label>
+          <select id={id("preferenciaContato")} name="preferenciaContato" className={`${fieldBase} ${fieldOk}`}>
+            {diagnostico.contactPreferences.map((value) => <option key={value}>{value}</option>)}
+          </select>
+        </div>
       </div>
 
       <div className="flex flex-col gap-1.5">

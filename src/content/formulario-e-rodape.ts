@@ -4,9 +4,9 @@ export const diagnostico = {
     description: "Conte qual processo do seu negócio precisa funcionar melhor e fale com a Tools.",
   },
   eyebrow: "Diagnóstico",
-  title: "Qual processo do seu negócio precisa funcionar melhor?",
+  title: "Descubra onde sua empresa está perdendo tempo e oportunidades.",
   intro:
-    "Conte, com suas palavras, o que hoje atrapalha a operação. Esse é o ponto de partida do diagnóstico.",
+    "Converse com um especialista para identificar melhorias em atendimento, vendas, processos e tecnologia.",
   fields: {
     name: "Nome",
     email: "E-mail",
@@ -14,16 +14,21 @@ export const diagnostico = {
     optional: "(opcional)",
     company: "Negócio ou empresa",
     segment: "Segmento",
-    message: "Conte o que hoje atrapalha a operação",
+    teamSize: "Pessoas envolvidas na operação",
+    contactPreference: "Melhor forma de contato",
+    message: "Principal desafio hoje",
     consent:
       "Concordo com o uso dos meus dados para retorno deste contato, conforme a Política de privacidade.",
   },
   segments: [
+    "Selecione um segmento",
     "Academia ou escola de artes marciais",
     "Oficina mecânica",
     "Psicólogo, consultório ou clínica",
     "Outro tipo de negócio",
   ],
+  teamSizes: ["Até 5 pessoas", "De 6 a 20 pessoas", "De 21 a 50 pessoas", "Mais de 50 pessoas"],
+  contactPreferences: ["WhatsApp", "E-mail", "Ligação"],
   submit: "Enviar pedido de diagnóstico",
   sending: "Enviando…",
   success: {
